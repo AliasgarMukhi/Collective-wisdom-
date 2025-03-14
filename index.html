@@ -285,9 +285,11 @@
     function filterQuotes(category) {
       const allQuotes = document.querySelectorAll('.quote-card');
       allQuotes.forEach(quote => {
-        quote.style.display = (category === 'All' || quote.dataset.category === category) 
-          ? 'block' 
-          : 'none';
+        if (category === 'All' || quote.dataset.category === category) {
+          quote.style.display = 'block';
+        } else {
+          quote.style.display = 'none';
+        }
       });
     }
 
@@ -296,7 +298,8 @@
       if (e.target.classList.contains('category-tab')) {
         document.querySelectorAll('.category-tab').forEach(tab => tab.classList.remove('active'));
         e.target.classList.add('active');
-        filterQuotes(e.target.dataset.category);
+        const selectedCategory = e.target.dataset.category;
+        filterQuotes(selectedCategory);
       }
     });
 
