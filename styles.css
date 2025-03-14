@@ -1,0 +1,104 @@
+/* === Accessibility: Highlight active category === */
+.category-tab[aria-selected="true"] {
+  font-weight: bold;
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* === Improved Form Inputs: Hover & Focus Effect === */
+.form-input:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 4px rgba(197, 164, 109, 0.3);
+}
+
+/* === Smooth Category Tab Transition === */
+.category-tab {
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.category-tab:hover {
+  transform: scale(1.05);
+  background: rgba(42, 45, 52, 0.1);
+}
+
+/* === Delete Button for Quotes === */
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #d9534f; /* Red color for delete button */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: #c9302c; /* Darker red on hover */
+}
+
+/* === Dark Mode Styling === */
+.dark-mode {
+  background-color: #2A2D34;
+  color: #F5F3EF;
+}
+
+.dark-mode .quote-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .form-input {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode .form-input:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode .submit-btn {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.dark-mode .submit-btn:hover {
+  background: #B08F54;
+}
+
+.dark-mode .category-tab {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode .category-tab.active {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+/* === Confirmation Message (Hidden by Default) === */
+.confirmation-message {
+  display: none;
+  background: #DFF2BF;
+  color: #4F8A10;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.show-message {
+  display: block;
+  opacity: 1;
+}
