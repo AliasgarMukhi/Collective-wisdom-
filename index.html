@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Primary Meta Tags -->
+  <title>Collective Wisdom | Share & Discover Inspirational Quotes</title>
+  <meta name="title" content="Collective Wisdom | Share & Discover Inspirational Quotes">
+  <meta name="description" content="Join our community of thinkers! Share and discover meaningful quotes about wisdom, inspiration, love, and success. Contribute your favorite sayings and browse by category.">
+  <meta name="keywords" content="wisdom quotes, inspirational sayings, motivational quotes, life quotes, love quotes, success quotes, philosophy quotes">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://collectivewisdom.com/">
+  <meta property="og:title" content="Collective Wisdom | Share & Discover Inspirational Quotes">
+  <meta property="og:description" content="Join our community of thinkers! Share and discover meaningful quotes about wisdom, inspiration, love, and success.">
+  <meta property="og:image" content="https://collectivewisdom.com/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://collectivewisdom.com/">
+  <meta property="twitter:title" content="Collective Wisdom | Share & Discover Inspirational Quotes">
+  <meta property="twitter:description" content="Join our community of thinkers! Share and discover meaningful quotes about wisdom, inspiration, love, and success.">
+  <meta property="twitter:image" content="https://collectivewisdom.com/images/og-image.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Collective Wisdom",
+    "description": "Community-driven platform for sharing and discovering inspirational quotes",
+    "url": "https://collectivewisdom.com",
+    "image": "https://collectivewisdom.com/images/logo.jpg",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Collective Wisdom",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://collectivewisdom.com/images/logo.jpg"
+      }
+    }
+  }
+  </script>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://collectivewisdom.com">
+
+  <!-- Viewport & Charset -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+
+  <!-- External Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header class="header" role="banner">
+      <h1>Collective Wisdom</h1>
+      <p>WHERE INSIGHTS CONVERGE</p>
+    </header>
+
+    <main role="main">
+      <form class="quote-form" id="quoteForm" aria-label="Quote submission form">
+        <input type="text" class="form-input" id="quoteInput" placeholder="Share your wisdom..." required>
+        <input type="text" class="form-input" id="authorInput" placeholder="Author (optional)">
+        <select class="form-input" id="categoryInput">
+          <option value="Wisdom">Wisdom</option>
+          <option value="Inspiration">Inspiration</option>
+          <option value="Love">Love</option>
+          <option value="Success">Success</option>
+          <option value="Philosophy">Philosophy</option>
+          <option value="Other">Other</option>
+        </select>
+        <button type="submit" class="submit-btn">Contribute Wisdom</button>
+      </form>
+
+      <section aria-labelledby="categoriesHeading">
+        <h2 id="categoriesHeading" class="sr-only">Quote Categories</h2>
+        <div class="categories" id="categoriesTabs">
+          <div class="category-tab active" data-category="All">All</div>
+          <div class="category-tab" data-category="Wisdom">Wisdom</div>
+          <div class="category-tab" data-category="Inspiration">Inspiration</div>
+          <div class="category-tab" data-category="Love">Love</div>
+          <div class="category-tab" data-category="Success">Success</div>
+          <div class="category-tab" data-category="Philosophy">Philosophy</div>
+        </div>
+      </section>
+
+      <div class="quotes-grid" id="quotesGrid" role="region" aria-live="polite"></div>
+    </main>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
