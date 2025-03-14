@@ -1,8 +1,12 @@
-const quotes = JSON.parse(localStorage.getItem('quotes')) || [];
+// Initialize quotes from localStorage or an empty array
+let quotes = JSON.parse(localStorage.getItem('quotes')) || [];
+
+// DOM Elements
 const form = document.getElementById('quoteForm');
 const quotesGrid = document.getElementById('quotesGrid');
 const categoriesTabs = document.getElementById('categoriesTabs');
 
+// Function to create a quote card
 function createQuoteElement(quote) {
   const card = document.createElement('div');
   card.className = 'quote-card';
@@ -14,6 +18,15 @@ function createQuoteElement(quote) {
   return card;
 }
 
+// Function to display all quotes
+function displayQuotes() {
+  quotesGrid.innerHTML = ''; // Clear the grid
+  quotes.forEach(quote => {
+    quotesGrid.appendChild(createQuoteElement(quote));
+  });
+}
+
+// Function to filter quotes by category
 function filterQuotes(category) {
   const allQuotes = document.querySelectorAll('.quote-card');
   allQuotes.forEach(quote => {
@@ -23,6 +36,7 @@ function filterQuotes(category) {
   });
 }
 
+// Event listener for category tabs
 categoriesTabs.addEventListener('click', (e) => {
   if (e.target.classList.contains('category-tab')) {
     document.querySelectorAll('.category-tab').forEach(tab => tab.classList.remove('active'));
@@ -31,6 +45,7 @@ categoriesTabs.addEventListener('click', (e) => {
   }
 });
 
+// Event listener for form submission
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   
@@ -42,11 +57,9 @@ form.addEventListener('submit', (e) => {
 
   quotes.push(newQuote);
   localStorage.setItem('quotes', JSON.stringify(quotes));
-  quotesGrid.prepend(createQuoteElement(newQuote));
-  form.reset();
+  quotesGrid.prepend(createQuoteElement(newQuote)); // Add new quote to the top
+  form.reset(); // Clear the form
 });
 
-// Initial load
-quotes.forEach(quote => {
-  quotesGrid.appendChild(createQuoteElement(quote));
-});
+// Initial load: Display all quotes
+displayQuotes();
