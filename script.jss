@@ -85,7 +85,14 @@ function showConfirmationMessage(message) {
   const confirmationMessage = document.createElement('div');
   confirmationMessage.className = 'confirmation-message show-message';
   confirmationMessage.textContent = message;
-  document.body.appendChild(confirmationMessage);
+
+  // Append the message to the container (or body if no container exists)
+  const container = document.querySelector('.container');
+  if (container) {
+    container.prepend(confirmationMessage); // Add message at the top of the container
+  } else {
+    document.body.prepend(confirmationMessage); // Fallback to body
+  }
 
   // Remove the message after 3 seconds
   setTimeout(() => {
